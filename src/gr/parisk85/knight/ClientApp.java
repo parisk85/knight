@@ -34,10 +34,8 @@ public class ClientApp {
                 .setDestination(destSquare)
                 .setMaxSteps(maxSteps)
                 .build();
-        List<LinkedList<Square>> routes = algorithm.run();
-        for (LinkedList<Square> lls : routes) {
-            System.out.println(lls);
-        }
+        List<LinkedList<Square>> result = algorithm.run();
+        System.out.println(printResults(result));
     }
 
     private static Properties loadProperties(String propertiesFilename) throws IOException {
@@ -45,5 +43,13 @@ public class ClientApp {
         Properties properties = new Properties();
         properties.load(new FileInputStream(rootPath + propertiesFilename));
         return properties;
+    }
+
+    private static String printResults(List<LinkedList<Square>> result) {
+        return result.stream()
+                .findFirst()
+                .map(l -> l.toString())
+                .orElse("No solution has been found.")
+                .toString();
     }
 }

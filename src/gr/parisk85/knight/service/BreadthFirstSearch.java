@@ -49,7 +49,8 @@ public class BreadthFirstSearch implements Algorithm {
 
     @Override
     public List<LinkedList<Square>> run() {
-        List<LinkedList<Square>> result = new ArrayList<>();
+        List<LinkedList<Square>>
+                result = new ArrayList<>();
         Queue<LinkedList<Square>> paths = new ArrayDeque<>();
 
         LinkedList<Square> path = new LinkedList<>();

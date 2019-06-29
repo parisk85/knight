@@ -1,6 +1,6 @@
 package gr.parisk85.knight.model;
 
-public abstract class Piece implements Chesspiece {
+public abstract class Piece {
     private Square position;
 
     public Square getPosition() {
