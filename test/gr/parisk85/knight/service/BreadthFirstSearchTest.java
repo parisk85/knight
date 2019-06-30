@@ -33,7 +33,6 @@ public class BreadthFirstSearchTest {
         builder = new BreadthFirstSearchBuilder();
     }
 
-
     @Test
     public void testHappyPathWithOneMove() {
         destination = Square.valueOf(2, 1);
