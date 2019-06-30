@@ -14,7 +14,6 @@ import static org.assertj.core.api.Assertions.*;
 
 public class BreadthFirstSearchTest {
     private Chessboard chessboard;
-    private Knight knight;
     private Square source;
     private Square destination;
     private int maxSteps;
@@ -27,7 +26,7 @@ public class BreadthFirstSearchTest {
         chessboard = Chessboard.create(8);
         source = Square.valueOf(0, 0);
         maxSteps = 3;
-        knight = new Knight();
+        Knight knight = new Knight();
         knight.setPosition(source);
         chessboard.setPiece(knight);
         builder = new BreadthFirstSearchBuilder();

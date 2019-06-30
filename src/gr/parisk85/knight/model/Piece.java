@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Piece {
-    protected List<Square> allowedMovesList;
+    protected final List<Square> allowedMovesList;
 
     private Square position;
 

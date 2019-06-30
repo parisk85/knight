@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Optional;
 
 public class AlgorithmBuilderFactory {
-    private static final Map<String, AlgorithmBuilder> algorithmMap = new HashMap<>();;
+    private static final Map<String, AlgorithmBuilder> algorithmMap = new HashMap<>();
 
     static {
         algorithmMap.put("BFS", new BreadthFirstSearchBuilder());

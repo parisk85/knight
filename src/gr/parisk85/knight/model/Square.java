@@ -30,8 +30,7 @@ public final class Square {
 
         Square square = (Square) o;
 
-        if (x != square.x) return false;
-        return y == square.y;
+        return x == square.x && y == square.y;
     }
 
     @Override

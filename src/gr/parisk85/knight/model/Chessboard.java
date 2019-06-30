@@ -33,9 +33,6 @@ public class Chessboard {
     }
 
     public boolean isValidPosition(Square square) {
-        if (square.getX() < 0 || square.getY() < 0 || square.getX() >= size || square.getY() >= size) {
-            return false;
-        }
-        return true;
+        return square.getX() >= 0 && square.getY() >= 0 && square.getX() < size && square.getY() < size;
     }
 }

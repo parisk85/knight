@@ -13,6 +13,7 @@ import gr.parisk85.knight.service.PieceFactory;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.AbstractCollection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
@@ -49,8 +50,7 @@ public class ClientApp {
     private static String printResults(List<LinkedList<Square>> result) {
         return result.stream()
                 .findFirst()
-                .map(l -> l.toString())
-                .orElse("No solution has been found.")
-                .toString();
+                .map(AbstractCollection::toString)
+                .orElse("No solution has been found.");
     }
 }
