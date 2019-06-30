@@ -2,6 +2,7 @@ package gr.parisk85.knight;
 
 import gr.parisk85.knight.exception.IllegalPiecePlacement;
 import gr.parisk85.knight.exception.UnknownAlgorithmException;
+import gr.parisk85.knight.exception.UnknownChesspieceException;
 import gr.parisk85.knight.model.Chessboard;
 import gr.parisk85.knight.model.Piece;
 import gr.parisk85.knight.model.Square;
@@ -19,7 +20,7 @@ import java.util.Properties;
 import static gr.parisk85.knight.Constants.*;
 
 public class ClientApp {
-    public static void main(String[] args) throws IOException, IllegalPiecePlacement, UnknownAlgorithmException {
+    public static void main(String[] args) throws IOException, IllegalPiecePlacement, UnknownAlgorithmException, UnknownChesspieceException {
         Properties clientProps = loadProperties(PROPERTIES_FILENAME);
         Chessboard chessboard = Chessboard.create(Integer.parseInt(clientProps.getProperty(CHESSBOARD_SIZE)));
         Square startingSquare = Square.valueOf(Integer.parseInt(clientProps.getProperty(SOURCE_X)), Integer.parseInt(clientProps.getProperty(SOURCE_Y)));

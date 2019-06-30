@@ -6,19 +6,6 @@ import gr.parisk85.knight.model.Square;
 import java.util.*;
 
 public class BreadthFirstSearch implements Algorithm {
-    private static List<Square> allowedMovesList = new ArrayList<>();
-
-    static {
-        allowedMovesList.add(Square.valueOf(2, -1));
-        allowedMovesList.add(Square.valueOf(2, 1));
-        allowedMovesList.add(Square.valueOf(-2, 1));
-        allowedMovesList.add(Square.valueOf(-2, -1));
-        allowedMovesList.add(Square.valueOf(1, -2));
-        allowedMovesList.add(Square.valueOf(1, 2));
-        allowedMovesList.add(Square.valueOf(-1, 2));
-        allowedMovesList.add(Square.valueOf(-1, -2));
-    }
-
     private Chessboard chessboard;
     private Square destination;
     private int maxSteps;
@@ -65,7 +52,7 @@ public class BreadthFirstSearch implements Algorithm {
                 result.add(path);
             }
 
-            for (Square moveDist : allowedMovesList) {
+            for (Square moveDist : chessboard.getPiece().getAllowedMovesList()) {
                 Square nextSquare = Square.valueOf(testSquare.getX() + moveDist.getX(), testSquare.getY() + moveDist.getY());
                 if (chessboard.isValidPosition(nextSquare) && !path.contains(nextSquare) && path.size() < maxSteps + 1) {
                     LinkedList<Square> newPath = new LinkedList<>();
