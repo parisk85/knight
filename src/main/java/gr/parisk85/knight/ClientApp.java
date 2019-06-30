@@ -11,8 +11,8 @@ import gr.parisk85.knight.service.AlgorithmBuilder;
 import gr.parisk85.knight.service.AlgorithmBuilderFactory;
 import gr.parisk85.knight.service.PieceFactory;
 
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.AbstractCollection;
 import java.util.LinkedList;
 import java.util.List;
@@ -41,9 +41,9 @@ public class ClientApp {
     }
 
     private static Properties loadProperties(String propertiesFilename) throws IOException {
-        String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+        InputStream in = ClientApp.class.getClassLoader().getResourceAsStream(PROPERTIES_FILENAME);
         Properties properties = new Properties();
-        properties.load(new FileInputStream(rootPath + propertiesFilename));
+        properties.load(in);
         return properties;
     }
 
